@@ -22,15 +22,16 @@
 		</dependency>
 		<dependency>
 			<groupId>nl.cz.verb</groupId>
+			<artifactId>verzekerdenejb</artifactId>
+			<version>1.0</version>
+			<type>ejb-client</type>
+		</dependency>
+		<dependency>
+			<groupId>nl.cz.verb</groupId>
 			<artifactId>verzekerdenweb</artifactId>
 			<version>1.0</version>
 			<type>war</type>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>nl.cz.verb</groupId> -->
-<!-- 			<artifactId>verzekerdenejb-client</artifactId> -->
-<!-- 			<version>1.0</version> -->
-<!-- 		</dependency> -->
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
@@ -55,6 +56,7 @@
 					<webModule>
 						<groupId>nl.cz.verb</groupId>
 						<artifactId>verzekerdenweb</artifactId>
+						<bundleFileName>verzekerdenweb.war</bundleFileName>
 						<contextRoot>/verb</contextRoot>
 					</webModule>
 				</configuration>

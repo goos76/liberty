@@ -2,20 +2,19 @@
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                          http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>nl.cz.verb</groupId>
-    <artifactId>simple-parent</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0</version>
-    <name>Multi Chapter Simple Parent Project</name>
+	<groupId>nl.cz.verb</groupId>
+	<artifactId>simple-parent</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0</version>
+	<name>Multi Chapter Simple Parent Project</name>
 
-    <modules>
-        <module>verzekerdenejb</module>
-		 <module>verzekerdenejb-client</module>
-        <module>verzekerdenweb</module>
-        <module>verzekerdenear</module>
-    </modules>
+	<modules>
+		<module>verzekerdenejb</module>
+		<module>verzekerdenweb</module>
+		<module>verzekerdenear</module>
+	</modules>
 	<build>
 		<plugins>
 			<plugin>

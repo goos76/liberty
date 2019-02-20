@@ -1,5 +1,8 @@
 package nl.cz.verb.view;
 
-public interface IVerbLocal extends IVerb{
+import javax.ejb.Local;
+
+@Local
+public interface IVerbLocal extends IVerb {
 
 }

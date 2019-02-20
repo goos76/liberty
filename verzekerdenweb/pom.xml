@@ -16,6 +16,7 @@
 		<dependency>
 			<groupId>nl.cz.verb</groupId>
 			<artifactId>verzekerdenejb</artifactId>
+			<type>ejb-client</type>
 			<version>1.0</version>
 		</dependency>
 		<dependency>
