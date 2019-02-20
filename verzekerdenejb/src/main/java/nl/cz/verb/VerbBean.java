@@ -21,8 +21,8 @@ public class VerbBean implements IVerb {
 
 	@Override
 	public Integer tweeKeer(Integer x) {
-		int result = 2 * x;
-		System.out.println("2 x " + x + " = " + result);
+		int result = 3 * x;
+		System.out.println("3 x " + x + " = " + result);
 		return result;
 	}
 

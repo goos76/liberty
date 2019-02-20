@@ -27,6 +27,15 @@ public class TestEjb extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String x = request.getParameter("x");
+		if (Boolean.parseBoolean(request.getParameter("y"))) {
+
+			IVerb unmanagedVerb = Factory.instance();
+			Integer terug = unmanagedVerb.tweeKeer(Integer.parseInt(x));
+			response.getWriter().append("unmanaged 2 x " + x + " = " + terug + "!!! at " + LocalDate.now());
+			return;
+
+		}
+
 		Integer terug = verb.tweeKeer(Integer.parseInt(x));
 		response.getWriter().append("2 x " + x + " = " + terug + "!!! at " + LocalDate.now());
 	}
