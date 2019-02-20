@@ -1,0 +1,867 @@
+<server>
+	<featureManager>
+		<feature>javaee-7.0</feature>
+		<feature>localConnector-1.0</feature>
+	</featureManager>
+	<authData id="AutorisatieDSAA" password="{xor}awk2NTklOiw="
+		user="LR3ALG" />
+	<authData id="BestandsKenmerkDSAA"
+		password="{xor}awk2NTklOiw=" user="LR3ALG" />
+	<authData id="BifKraaDSAA" password="{xor}awk2NTklOiw="
+		user="LR3ALG" />
+	<authData id="BIfUvalDSAA" password="{xor}awk2NTklOiw="
+		user="LR3ALG" />
+	<authData id="BMsSchaDSAA" password="{xor}awk2NTklOiw="
+		user="LR3SCHA" />
+	<authData id="BOgOrgDSAA" password="{xor}awk2NTklOiw="
+		user="LR3ORG" />
+	<authData id="BPePersDSAA" password="{xor}awk2NTklOiw="
+		user="BVRVERBO" />
+	<authData id="BVrErv-1DSAA" password="{xor}awk2NTklOiw="
+		user="LR3ERVHI" />
+	<authData id="BVrErv-2DSAA" password="{xor}awk2NTklOiw="
+		user="LR3ERVOV" />
+	<authData id="DcDSAA" password="{xor}awk2NTklOiw="
+		user="LR3DC" />
+	<authData id="DgDSAA" password="{xor}awk2NTklOiw="
+		user="LR3DG" />
+	<authData id="VerbDSAA" password="{xor}awk2NTklOiw="
+		user="BVRVERBO" />
+	<authData id="WerkbakDSAA" password="{xor}awk2NTklOiw="
+		user="LR3ALG" />
+	<authData id="UitvDSAA" password="{xor}awk2NTklOiw="
+		user="LR3UITV" />
+
+	<jmsQueue id="BIfUvalRequestGet"
+		jndiName="jms/BIfUval/request/get">
+		<properties.wmqJms CCSID="1"
+			baseQueueManagerName="CWTP0395A" baseQueueName="BIFUVAL.RQST.OL.AG"
+			expiry="APP" failIfQuiesce="true" persistence="APP" priority="APP"
+			putAsyncAllowed="ENABLED" readAheadAllowed="ENABLED"
+			readAheadClosePolicy="ALL" receiveCCSID="1208"
+			receiveConversion="QMGR" targetClient="MQ" />
+	</jmsQueue>
+	<jmsQueue id="BIfUvalRequestPut"
+		jndiName="jms/BIfUval/request/put">
+		<properties.wmqJms CCSID="2"
+			baseQueueManagerName="CWTP0395A" baseQueueName="BIFUVAL.RQST.OL.AP"
+			expiry="APP" failIfQuiesce="true" persistence="APP" priority="APP"
+			putAsyncAllowed="ENABLED" readAheadAllowed="ENABLED"
+			readAheadClosePolicy="ALL" receiveCCSID="1208"
+			receiveConversion="QMGR" targetClient="MQ" />
+	</jmsQueue>
+
+	<jmsQueueConnectionFactory
+		id="BestandsKenmerkMQCF" jndiName="jms/BestandsKenmerkCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="BifKraaMQCF"
+		jndiName="jms/BifKraaCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="BIfUvalMQCF"
+		jndiName="jms/BIfUvalCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="BMsSchaMQCF"
+		jndiName="jms/BMsSchaCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="c406bumqMQCF"
+		jndiName="jms/c406bumqCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="c406olmqMQCF"
+		jndiName="jms/c406olmqCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="c410bumqMQCF"
+		jndiName="jms/c410bumqCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="c410olmqMQCF"
+		jndiName="jms/c410olmqCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="c470bumqMQCF"
+		jndiName="jms/c470bumqCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="c470olmqMQCF"
+		jndiName="jms/c470olmqCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="c479bumqMQCF"
+		jndiName="jms/c479bumqCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="c479olmqMQCF"
+		jndiName="jms/c479olmqCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="c480bumqMQCF"
+		jndiName="jms/c480bumqCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="c480olmqMQCF"
+		jndiName="jms/c480olmqCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="BOgOrgMQCF"
+		jndiName="jms/BOgOrgCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="ErvHistMQCF"
+		jndiName="jms/ErvHistCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="ErvOvkMQCF"
+		jndiName="jms/ErvOvkCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory
+		id="ErvProduktMQCF" jndiName="jms/ErvProduktCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="ErvRefMQCF"
+		jndiName="jms/ErvRefCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="ErvUitvalMQCF"
+		jndiName="jms/ErvUitvalCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="DcMQCF"
+		jndiName="jms/DcCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="BvMQCF"
+		jndiName="jms/BvCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="BDCIncaMQCF"
+		jndiName="jms/BDCIncaCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="DgMQCF"
+		jndiName="jms/DgCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="PDcRm001MQCF"
+		jndiName="jms/PDcRm001CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="PDcRm002MQCF"
+		jndiName="jms/PDcRm002CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="PDcRm003MQCF"
+		jndiName="jms/PDcRm003CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="PDcRm004MQCF"
+		jndiName="jms/PDcRm004CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="PDcRm005MQCF"
+		jndiName="jms/PDcRm005CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="PDcRm012MQCF"
+		jndiName="jms/PDcRm012CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="PDcRm976MQCF"
+		jndiName="jms/PDcRm976CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="PDcRm978MQCF"
+		jndiName="jms/PDcRm978CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="PDcRm979MQCF"
+		jndiName="jms/PDcRm979CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="PDcRm995MQCF"
+		jndiName="jms/PDcRm995CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="PDcRm996MQCF"
+		jndiName="jms/PDcRm996CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm013MQCF"
+		jndiName="jms/IDcRm013CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm015MQCF"
+		jndiName="jms/IDcRm015CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm018MQCF"
+		jndiName="jms/IDcRm018CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm020MQCF"
+		jndiName="jms/IDcRm020CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm022MQCF"
+		jndiName="jms/IDcRm022CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm031MQCF"
+		jndiName="jms/IDcRm031CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm036MQCF"
+		jndiName="jms/IDcRm036CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm042MQCF"
+		jndiName="jms/IDcRm042CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm045MQCF"
+		jndiName="jms/IDcRm045CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm046MQCF"
+		jndiName="jms/IDcRm046CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm048MQCF"
+		jndiName="jms/IDcRm048CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm058MQCF"
+		jndiName="jms/IDcRm058CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm062MQCF"
+		jndiName="jms/IDcRm062CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm067MQCF"
+		jndiName="jms/IDcRm067CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm075MQCF"
+		jndiName="jms/IDcRm075CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm076MQCF"
+		jndiName="jms/IDcRm076CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm085MQCF"
+		jndiName="jms/IDcRm085CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm086MQCF"
+		jndiName="jms/IDcRm086CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm089MQCF"
+		jndiName="jms/IDcRm089CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm097MQCF"
+		jndiName="jms/IDcRm097CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm098MQCF"
+		jndiName="jms/IDcRm098CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm100MQCF"
+		jndiName="jms/IDcRm100CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm100AMQCF"
+		jndiName="jms/IDcRm100ACF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm101MQCF"
+		jndiName="jms/IDcRm101CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm102MQCF"
+		jndiName="jms/IDcRm102CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm106MQCF"
+		jndiName="jms/IDcRm106CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm108MQCF"
+		jndiName="jms/IDcRm108CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm119MQCF"
+		jndiName="jms/IDcRm119CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm120MQCF"
+		jndiName="jms/IDcRm120CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm121MQCF"
+		jndiName="jms/IDcRm121CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm124MQCF"
+		jndiName="jms/IDcRm124CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm126MQCF"
+		jndiName="jms/IDcRm126CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm127MQCF"
+		jndiName="jms/IDcRm127CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm129MQCF"
+		jndiName="jms/IDcRm129CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm132MQCF"
+		jndiName="jms/IDcRm132CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm134MQCF"
+		jndiName="jms/IDcRm134CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm136MQCF"
+		jndiName="jms/IDcRm136CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm140MQCF"
+		jndiName="jms/IDcRm140CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm144MQCF"
+		jndiName="jms/IDcRm144CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm146MQCF"
+		jndiName="jms/IDcRm146CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm147MQCF"
+		jndiName="jms/IDcRm147CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm155MQCF"
+		jndiName="jms/IDcRm155CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm167MQCF"
+		jndiName="jms/IDcRm167CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm170MQCF"
+		jndiName="jms/IDcRm170CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm171MQCF"
+		jndiName="jms/IDcRm171CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm182MQCF"
+		jndiName="jms/IDcRm182CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm185MQCF"
+		jndiName="jms/IDcRm185CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm187MQCF"
+		jndiName="jms/IDcRm187CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm188MQCF"
+		jndiName="jms/IDcRm188CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm194MQCF"
+		jndiName="jms/IDcRm194CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm195MQCF"
+		jndiName="jms/IDcRm195CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm196MQCF"
+		jndiName="jms/IDcRm196CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm199MQCF"
+		jndiName="jms/IDcRm199CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm206MQCF"
+		jndiName="jms/IDcRm206CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm214MQCF"
+		jndiName="jms/IDcRm214CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm225MQCF"
+		jndiName="jms/IDcRm225CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm226MQCF"
+		jndiName="jms/IDcRm226CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm243MQCF"
+		jndiName="jms/IDcRm243CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm244MQCF"
+		jndiName="jms/IDcRm244CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm245MQCF"
+		jndiName="jms/IDcRm245CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm250MQCF"
+		jndiName="jms/IDcRm250CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm255MQCF"
+		jndiName="jms/IDcRm255CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm260MQCF"
+		jndiName="jms/IDcRm260CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm261MQCF"
+		jndiName="jms/IDcRm261CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm264MQCF"
+		jndiName="jms/IDcRm264CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm266MQCF"
+		jndiName="jms/IDcRm266CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="VordMQCF"
+		jndiName="jms/VordCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm011MQCF"
+		jndiName="jms/IDcRm011CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm023MQCF"
+		jndiName="jms/IDcRm023CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="IDcRm041MQCF"
+		jndiName="jms/IDcRm041CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="TDcRmMQCF"
+		jndiName="jms/TDcRmCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory
+		id="GenericClientMQCF" jndiName="jms/GenericClientCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory
+		id="GenericClientXAMQCF" jndiName="jms/GenericClientXACF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory
+		id="TIfUvalWebMQCF" jndiName="jms/TIfUvalWebCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="PVrEr001MQCF"
+		jndiName="jms/PVrEr001CF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="ErvPicMQCF"
+		jndiName="jms/ErvPicCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="ErvWebMQCF"
+		jndiName="jms/ErvWebCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="VerbMQCF"
+		jndiName="jms/VerbCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="c401bumqMQCF"
+		jndiName="jms/c401bumqCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="c401olmqMQCF"
+		jndiName="jms/c401olmqCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="c405bumqMQCF"
+		jndiName="jms/c405bumqCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="c405olmqMQCF"
+		jndiName="jms/c405olmqCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="c407bumqMQCF"
+		jndiName="jms/c407bumqCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="c407olmqMQCF"
+		jndiName="jms/c407olmqCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="c425bumqMQCF"
+		jndiName="jms/c425bumqCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="c425olmqMQCF"
+		jndiName="jms/c425olmqCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="c430bumqMQCF"
+		jndiName="jms/c430bumqCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="c430olmqMQCF"
+		jndiName="jms/c430olmqCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="WerkbakMQCF"
+		jndiName="jms/WerkbakCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory
+		id="WerkbakWebMQCF" jndiName="jms/WerkbakWebCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="UitvMQCF"
+		jndiName="jms/UitvCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="DvbMQCF"
+		jndiName="jms/DvbCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jmsQueueConnectionFactory id="UitvWebMQCF"
+		jndiName="jms/UitvWebCF">
+		<properties.wmqJms hostName="APP0395" port="1415"
+			queueManager="CWTP0395A" />
+	</jmsQueueConnectionFactory>
+	<jdbcDriver id="DB2_Type4_JDBC_Provider"
+		javax.sql.DataSource="com.ibm.db2.jcc.DB2ConnectionPoolDataSource">
+		<library>
+			<file name="${CZ_LIB_DIR}/db2jcc4.jar" />
+		</library>
+	</jdbcDriver>
+	<dataSource containerAuthDataRef="AutorisatieDSAA"
+		id="AutorisatieDS" jdbcDriverRef="DB2_Type4_JDBC_Provider"
+		jndiName="jdbc/AutorisatieDB">
+		<properties databaseName="NLCZNET" driverType="4"
+			name="AutorisatieDS" portNumber="446"
+			preTestSQLString="SELECT 1 FROM TABLE1" resultSetHoldability="2"
+			serverName="NLCZTBMFO00" statementCacheSize="100" traceLevel="" />
+		<connectionManager agedTimeout="0"
+			connectionTimeout="1800" maxIdleTime="1800" maxPoolSize="10"
+			minPoolSize="0" reapTime="180" />
+	</dataSource>
+	<dataSource containerAuthDataRef="BestandsKenmerkDSAA"
+		id="BestandsKenmerkDS" jdbcDriverRef="DB2_Type4_JDBC_Provider"
+		jndiName="jdbc/BestandsKenmerkDB">
+		<properties databaseName="NLCZNET" driverType="4"
+			name="BestandsKenmerkDS" portNumber="446"
+			preTestSQLString="SELECT 1 FROM TABLE1" resultSetHoldability="2"
+			serverName="NLCZTBMFO00" statementCacheSize="100" traceLevel="" />
+		<connectionManager agedTimeout="0"
+			connectionTimeout="1800" maxIdleTime="1800" maxPoolSize="10"
+			minPoolSize="0" reapTime="180" />
+	</dataSource>
+	<dataSource containerAuthDataRef="BifKraaDSAA"
+		id="BifKraaDS" jdbcDriverRef="DB2_Type4_JDBC_Provider"
+		jndiName="jdbc/BifKraaDB">
+		<properties databaseName="NLCZNET" driverType="4"
+			name="BifKraaDS" portNumber="446"
+			preTestSQLString="SELECT 1 FROM TABLE1" resultSetHoldability="2"
+			serverName="NLCZTBMFO00" statementCacheSize="100" traceLevel="" />
+		<connectionManager agedTimeout="0"
+			connectionTimeout="1800" maxIdleTime="1800" maxPoolSize="10"
+			minPoolSize="0" reapTime="180" />
+	</dataSource>
+	<dataSource containerAuthDataRef="BIfUvalDSAA"
+		id="BIfUvalDS" jdbcDriverRef="DB2_Type4_JDBC_Provider"
+		jndiName="jdbc/BIfUvalDB">
+		<properties databaseName="NLCZNET" driverType="4"
+			name="BIfUvalDS" portNumber="446"
+			preTestSQLString="SELECT 1 FROM TABLE1" resultSetHoldability="2"
+			serverName="NLCZTBMFO00" statementCacheSize="100" traceLevel="" />
+		<connectionManager agedTimeout="0"
+			connectionTimeout="1800" maxIdleTime="1800" maxPoolSize="10"
+			minPoolSize="0" reapTime="180" />
+	</dataSource>
+	<dataSource containerAuthDataRef="BMsSchaDSAA"
+		id="BMsSchaDS" jdbcDriverRef="DB2_Type4_JDBC_Provider"
+		jndiName="jdbc/BMsSchaDB">
+		<properties databaseName="NLCZNET" driverType="4"
+			name="BMsSchaDS" portNumber="446"
+			preTestSQLString="SELECT 1 FROM TABLE1" resultSetHoldability="2"
+			serverName="NLCZTBMFO00" statementCacheSize="100" traceLevel="" />
+		<connectionManager agedTimeout="0"
+			connectionTimeout="1800" maxIdleTime="1800" maxPoolSize="10"
+			minPoolSize="0" reapTime="180" />
+	</dataSource>
+	<dataSource containerAuthDataRef="BOgOrgDSAA" id="BOgOrgDS"
+		jdbcDriverRef="DB2_Type4_JDBC_Provider" jndiName="jdbc/BOgOrgDB">
+		<properties databaseName="NLCZNET" driverType="4"
+			name="BOgOrgDS" portNumber="446"
+			preTestSQLString="SELECT 1 FROM TABLE1" resultSetHoldability="2"
+			serverName="NLCZTBMFO00" statementCacheSize="100" traceLevel="" />
+		<connectionManager agedTimeout="0"
+			connectionTimeout="1800" maxIdleTime="1800" maxPoolSize="10"
+			minPoolSize="0" reapTime="180" />
+	</dataSource>
+	<dataSource containerAuthDataRef="BPePersDSAA"
+		id="BPePersDS" jdbcDriverRef="DB2_Type4_JDBC_Provider"
+		jndiName="jdbc/BPePersDB">
+		<properties databaseName="NLCZNET" driverType="4"
+			name="BPePersDS" portNumber="446"
+			preTestSQLString="SELECT 1 FROM TABLE1" resultSetHoldability="2"
+			serverName="NLCZTBMFO00" statementCacheSize="100" traceLevel="" />
+		<connectionManager agedTimeout="0"
+			connectionTimeout="1800" maxIdleTime="1800" maxPoolSize="10"
+			minPoolSize="0" reapTime="180" />
+	</dataSource>
+	<dataSource containerAuthDataRef="BVrErv-1DSAA"
+		id="BVrErv-1DS" jdbcDriverRef="DB2_Type4_JDBC_Provider"
+		jndiName="jdbc/ErvHistDB">
+		<properties databaseName="NLCZNET" driverType="4"
+			name="BVrErv-1DS" portNumber="446"
+			preTestSQLString="SELECT 1 FROM TABLE1" resultSetHoldability="2"
+			serverName="NLCZTBMFO00" statementCacheSize="100" traceLevel="" />
+		<connectionManager agedTimeout="0"
+			connectionTimeout="1800" maxIdleTime="1800" maxPoolSize="10"
+			minPoolSize="0" reapTime="180" />
+	</dataSource>
+	<dataSource containerAuthDataRef="BVrErv-2DSAA"
+		id="BVrErv-2DS" jdbcDriverRef="DB2_Type4_JDBC_Provider"
+		jndiName="jdbc/ErvOvkDB">
+		<properties databaseName="NLCZNET" driverType="4"
+			name="BVrErv-2DS" portNumber="446"
+			preTestSQLString="SELECT 1 FROM TABLE1" resultSetHoldability="2"
+			serverName="NLCZTBMFO00" statementCacheSize="100" traceLevel="" />
+		<connectionManager agedTimeout="0"
+			connectionTimeout="1800" maxIdleTime="1800" maxPoolSize="10"
+			minPoolSize="0" reapTime="180" />
+	</dataSource>
+	<dataSource containerAuthDataRef="DcDSAA" id="DcDS"
+		jdbcDriverRef="DB2_Type4_JDBC_Provider" jndiName="jdbc/DcDB">
+		<properties databaseName="NLCZNET" driverType="4"
+			name="DcDS" portNumber="446" preTestSQLString="SELECT 1 FROM TABLE1"
+			resultSetHoldability="2" serverName="NLCZTBMFO00"
+			statementCacheSize="100" traceLevel="" />
+		<connectionManager agedTimeout="0"
+			connectionTimeout="1800" maxIdleTime="1800" maxPoolSize="10"
+			minPoolSize="0" reapTime="180" />
+	</dataSource>
+	<dataSource containerAuthDataRef="DgDSAA" id="DgDS"
+		jdbcDriverRef="DB2_Type4_JDBC_Provider" jndiName="jdbc/DgDB">
+		<properties databaseName="NLCZNET" driverType="4"
+			name="DgDS" portNumber="446" preTestSQLString="SELECT 1 FROM TABLE1"
+			resultSetHoldability="2" serverName="NLCZTBMFO00"
+			statementCacheSize="100" traceLevel="" />
+		<connectionManager agedTimeout="0"
+			connectionTimeout="1800" maxIdleTime="1800" maxPoolSize="10"
+			minPoolSize="0" reapTime="180" />
+	</dataSource>
+	<dataSource containerAuthDataRef="VerbDSAA" id="VerbDS"
+		jdbcDriverRef="DB2_Type4_JDBC_Provider" jndiName="jdbc/VerbDB">
+		<properties databaseName="NLCZNET" driverType="4"
+			name="VerbDS" portNumber="446"
+			preTestSQLString="SELECT 1 FROM TABLE1" resultSetHoldability="2"
+			serverName="NLCZTBMFO00" statementCacheSize="100" traceLevel="" />
+		<connectionManager agedTimeout="0"
+			connectionTimeout="1800" maxIdleTime="1800" maxPoolSize="10"
+			minPoolSize="0" reapTime="180" />
+	</dataSource>
+	<dataSource containerAuthDataRef="WerkbakDSAA"
+		id="WerkbakDS" jdbcDriverRef="DB2_Type4_JDBC_Provider"
+		jndiName="jdbc/WerkbakDB">
+		<properties databaseName="NLCZNET" driverType="4"
+			name="WerkbakDS" portNumber="446"
+			preTestSQLString="SELECT 1 FROM TABLE1" resultSetHoldability="2"
+			serverName="NLCZTBMFO00" statementCacheSize="100" traceLevel="" />
+		<connectionManager agedTimeout="0"
+			connectionTimeout="1800" maxIdleTime="1800" maxPoolSize="10"
+			minPoolSize="0" reapTime="180" />
+	</dataSource>
+	<dataSource containerAuthDataRef="UitvDSAA" id="UitvDS"
+		jdbcDriverRef="DB2_Type4_JDBC_Provider" jndiName="jdbc/UitvDB">
+		<properties databaseName="NLCZNET" driverType="4"
+			name="UitvDS" portNumber="446"
+			preTestSQLString="SELECT 1 FROM TABLE1" resultSetHoldability="2"
+			serverName="NLCZTBMFO00" statementCacheSize="100" traceLevel="" />
+		<connectionManager agedTimeout="0"
+			connectionTimeout="1800" maxIdleTime="1800" maxPoolSize="10"
+			minPoolSize="0" reapTime="180" />
+	</dataSource>
+	<variable name="DERBY_JDBC_DRIVER_PATH"
+		value="${WAS_INSTALL_ROOT}/derby/lib" />
+	<variable name="DB2UNIVERSAL_JDBC_DRIVER_NATIVEPATH" value="" />
+	<variable name="CZ_LIB_DIR"
+		value="${WAS_INSTALL_ROOT}/optionalLibraries/cz" />
+	<variable name="wmqJmsClient.rar.location"
+		value="C:/IBM/WebSphere/AppServer/installedConnectors/wmq.jmsra.rar" />
+
+	<applicationMonitor updateTrigger="mbean" />
+
+	<keyStore id="defaultKeyStore" password="SA_WAS" />
+
+	<basicRegistry id="basic" realm="BasicRealm">
+		<user name="SA_WAS" password="SA_WAS" />
+	</basicRegistry>
+	<logging traceSpecification="Naming=all:NamingService=all"
+		traceFileName="jndi.log" maxFileSize="20" maxFiles="10"
+		traceFormat="BASIC" />
+</server>
