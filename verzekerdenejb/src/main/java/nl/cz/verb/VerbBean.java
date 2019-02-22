@@ -8,6 +8,7 @@ import javax.ejb.Stateless;
 import nl.cz.verb.view.IVerb;
 import nl.cz.verb.view.IVerbLocal;
 import nl.cz.verb.view.IVerbRemote;
+import nl.cz.verb.view.VerbPojo;
 
 @Stateless(name = "VerbBean")
 @Local(IVerbLocal.class)
@@ -21,9 +22,7 @@ public class VerbBean implements IVerb {
 
 	@Override
 	public Integer tweeKeer(Integer x) {
-		int result = 3 * x;
-		System.out.println("3 x " + x + " = " + result);
-		return result;
+		return new VerbPojo().tweeKeer(x);
 	}
 
 }

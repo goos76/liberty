@@ -4,5 +4,5 @@ import javax.ejb.Remote;
 
 @Remote
 public interface IVerbRemote extends IVerb {
-
+	// Nothing yet
 }

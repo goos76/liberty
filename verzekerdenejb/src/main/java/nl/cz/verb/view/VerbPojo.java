@@ -5,17 +5,13 @@ import java.io.Serializable;
 import javax.inject.Named;
 
 @Named("verbPojo")
-public class VerbPojo implements IVerb, Serializable{
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 3502432843619059025L;
+public class VerbPojo implements IVerb, Serializable {
 
 	@Override
 	public Integer tweeKeer(Integer x) {
-		System.out.println("VerbPojo");
-		return x == null ? null : x * 2;
+		int result = 3 * x;
+		System.out.println("3 x " + x + " = " + result);
+		return result;
 	}
-	
+
 }
