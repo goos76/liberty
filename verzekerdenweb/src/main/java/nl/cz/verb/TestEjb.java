@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 import javax.ejb.EJB;
+import javax.inject.Inject;
+import javax.inject.Named;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +20,19 @@ public class TestEjb extends HttpServlet {
 
 	@EJB(name = "VerbBean", beanInterface = IVerbRemote.class)
 	IVerb verb;
-
+	
+	@Inject
+	@IVerbWeb
+	private IVerb webVerbPojo;
+	
+	@Inject
+	@Named("verbPojo")
+	private IVerb ejbwebVerbPojo;
+	
+	@Inject
+	private Factory factory;
+	
+ 
 	public TestEjb() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -29,7 +43,7 @@ public class TestEjb extends HttpServlet {
 		String x = request.getParameter("x");
 		if (Boolean.parseBoolean(request.getParameter("y"))) {
 
-			IVerb unmanagedVerb = Factory.instance();
+			IVerb unmanagedVerb = factory.instance();
 			Integer terug = unmanagedVerb.tweeKeer(Integer.parseInt(x));
 			response.getWriter().append("unmanaged 2 x " + x + " = " + terug + "!!! at " + LocalDate.now());
 			return;
