@@ -44,21 +44,28 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-ear-plugin</artifactId>
-				<version>3.0.0</version>
+				<version>3.0.1</version>
+			</plugin>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>dockerfile-maven-plugin</artifactId>
+				<version>${spotify.docker.plugin.version}</version>
+				<!-- Wire up to the default build phases -->
+				<executions>
+					<execution>
+						<id>default</id>
+						<phase>package</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+				</executions>
 				<configuration>
-					<version>7</version>
-					<generateApplicationXml>false</generateApplicationXml>
-					<ejbModule>
-						<groupId>nl.cz.verb</groupId>
-						<artifactId>verzekerdenejb</artifactId>
-						<bundleFilename>verzekerdenejb.jar</bundleFilename>
-					</ejbModule>
-					<webModule>
-						<groupId>nl.cz.verb</groupId>
-						<artifactId>verzekerdenweb</artifactId>
-						<bundleFileName>verzekerdenweb.war</bundleFileName>
-						<contextRoot>/verb</contextRoot>
-					</webModule>
+					<repository>cz/${project.artifactId}</repository>
+					<tag>${project.artifactId}-${project.version}</tag>
+					<buildArgs>
+						<WAR_FILE>target/verzekerdenear-1.0.ear</WAR_FILE>
+					</buildArgs>
 				</configuration>
 			</plugin>
 		</plugins>
